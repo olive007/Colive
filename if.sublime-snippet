@@ -1,0 +1,11 @@
+<snippet>
+	<tabTrigger>if</tabTrigger>
+	<description>If condition</description>
+	<content><![CDATA[
+if (${1:TRUE}) {
+	$0
+}
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
+

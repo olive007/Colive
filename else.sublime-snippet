@@ -1,0 +1,11 @@
+<snippet>
+	<tabTrigger>else</tabTrigger>
+	<description>else condition</description>
+	<content><![CDATA[
+else {
+	$0
+}
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
+

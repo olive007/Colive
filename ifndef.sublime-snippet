@@ -1,0 +1,14 @@
+<snippet>
+	<tabTrigger>ifndef</tabTrigger>
+	<description>ifndef encapsulation</description>
+	<content><![CDATA[
+#ifndef $1
+# define ${1:${TM_FILENAME/(([A-Z])([A-Z][a-z]))|(([a-z])([A-Z]))|([a-z])|(\.)/\U(?1:$2_$3)(?4:$5_$6)$7(?8:_)\E/g}_}
+
+$0
+
+#endif /* $1 */
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
+

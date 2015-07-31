@@ -1,0 +1,27 @@
+<snippet>
+	<tabTrigger>class</tabTrigger>
+	<description>Normal C++ Class</description>
+	<content><![CDATA[
+class ${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}} {
+public:
+	// Constructor
+	${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}}($2);
+
+	// Destructor
+	virtual ~${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}}();
+
+	// Getter
+
+	// Setter
+
+	// Method
+
+	// Attribut
+private:
+	$0
+
+};
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
+

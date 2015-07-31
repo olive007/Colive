@@ -1,0 +1,10 @@
+<snippet>
+	<tabTrigger>for</tabTrigger>
+	<description>for container C++ loop</description>
+	<content><![CDATA[
+for (auto ${1:it} = ${3:var}.begin(); ${1:it} != ${3:var}.end(); ${1:it}++) {
+	${0:/* code */}
+}
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

@@ -1,0 +1,27 @@
+<snippet>
+	<tabTrigger>class</tabTrigger>
+	<tabTrigger>exception</tabTrigger>
+	<description>Exception C++</description>
+	<content><![CDATA[
+class ${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}} : public ${2:std::exception} {
+public:
+	// Constructor
+	${1/(\w+).*/$1/}(${3:const std::string& str}): ${2:std::runtime_error}(${4:str}) {
+		
+	}
+};
+
+	// Destructor
+	virtual ~${1/(\w+).*/$1/}() throw {}
+
+	// Method
+	virtual const char*	what() const throw() {
+		return _msg.c_str();
+	}
+private:
+	std::string _msg;
+
+};
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

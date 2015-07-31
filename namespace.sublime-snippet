@@ -1,0 +1,13 @@
+<snippet>
+	<tabTrigger>namespace</tabTrigger>
+	<description>C++ namespace</description>
+	<content><![CDATA[
+namespace ${1:${TM_FILEPATH/(.*)\/(.*)\/([a-zA-Z._]*)/$2/}} {
+
+	$0
+
+}
+]]></content>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
+
