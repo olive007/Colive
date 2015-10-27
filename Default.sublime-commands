@@ -1,0 +1,14 @@
+[
+    {
+        "caption": "Colive: Create class",
+        "command": "fast_header_create_class"
+    },
+    {
+        "caption": "Colive: Generate Getter",
+        "command": "fast_header_generate_getter"
+    },
+    {
+        "caption": "Colive: Generate Setter",
+        "command": "fast_header_generate_setter"
+    }
+]
