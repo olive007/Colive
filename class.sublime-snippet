@@ -3,22 +3,18 @@
 	<description>Normal C++ Class</description>
 	<content><![CDATA[
 class ${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}} {
-public:
-	// Constructor
-	${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}}($2);
-
-	// Destructor
-	virtual ~${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}}();
-
-	// Getter
-
-	// Setter
-
-	// Method
 
 	// Attribut
-private:
-	$0
+	private:
+		$4
+	
+	// Constructor
+	public:
+		${2:${TM_FILENAME/(.+)\..+|.*/\u$1/}}($3)
+
+	// Destructor
+	public:
+		virtual ~${2:${TM_FILENAME/(.+)\..+|.*/\u$1/}}() {};$0
 
 };
 ]]></content>

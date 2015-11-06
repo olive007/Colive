@@ -1,14 +1,31 @@
 [
     {
         "caption": "Colive: Create class",
-        "command": "fast_header_create_class"
+        "command": "colive_create_class"
     },
     {
         "caption": "Colive: Generate Getter",
-        "command": "fast_header_generate_getter"
+        "command": "colive_generate_method",
+        "args": { "type": "Getter" }
     },
     {
         "caption": "Colive: Generate Setter",
-        "command": "fast_header_generate_setter"
+        "command": "colive_generate_method",
+        "args": { "type": "Setter" }
+    },
+    {
+        "caption": "Colive: Generate Operator=",
+        "command": "colive_generate_method",
+        "args": { "type": "Operator=" }
+    },
+    {
+        "caption": "Colive: Generate Operator<<",
+        "command": "colive_generate_method",
+        "args": { "type": "Operator<<" }
+    },
+    {
+        "caption": "Colive: Generate Operator>>",
+        "command": "colive_generate_method",
+        "args": { "type": "Operator>>" }
     }
 ]
