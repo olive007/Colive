@@ -12,15 +12,6 @@ from parsing import Instruction
 from parsing import Variable
 from parsing import ParserException
 
-class Argument(Variable):
-	"""
-		Argument
-	"""
-
-	def __init(self, type, name="arg"):
-		super(Argument, self).__init__(type, "arg")
-
-
 class Method(Instruction):
 	"""Method
 		This class is defined by
@@ -32,53 +23,93 @@ class Method(Instruction):
 	"""
 	def __init__(self, name, static=False):
 		super(Method, self).__init__(static)
-		self._name = re.sub("\s+", " ", name.strip())
-		self._const = False
-		self._virtual = False
-		self._returnType = None
-		self._arguments = []
+		self.name = name
+		self.__const = False
+		self.__virtual = False
+		self.__returnType = None
+		self.__arguments = []
 
 	### Getter
+	@property
+	def name(self):
+		return self.__name
+
+	@property
+	def const(self):
+		return self.__const
+	
+	@property
+	def virtual(self):
+		return self.__virtual
+	
+	@property
+	def returnType(self):
+		return self.__returnType
+
+	def getId(self):
+		tmp = self.__name
+		for arg in self.__arguments:
+			tmp += arg.type
+		return tmp
+
 	def getConst(self):
 		return self._const
 
 	### Setter
-	def setConst(self, arg):
-		if not (isinstance(arg, bool)):
-			raise ParserException("Wrong argument")
-		self._const = arg
+	@name.setter
+	def name(self, val):
+		if val:
+			tmp = val.strip()
+			if re.match("^[~\w]+$", tmp):
+				self.__name = tmp
+			else:
+				raise ParserException("Wrong argument: name is not correct")
+		else:
+			raise ParserException("Wrong argument: name is null")
 
-	def setReturnType(self, arg):
-		self._returnType = re.sub("\s+", " ", arg.strip())
 
-	def setVirtual(self, arg):
-		if not (isinstance(arg, bool)):
-			raise ParserException("Wrong argument")
-		self._virtual = arg
+	@const.setter
+	def const(self, val):
+		if not (isinstance(val, bool)):
+			self.__const = False
+		self.__const = val
 
+	@virtual.setter
+	def virtual(self, val):
+		if not (isinstance(val, bool)):
+			self.__const = False
+		self.__const = val
+
+	@returnType.setter
+	def returnType(self, val):
+		if val:
+			self.__returnType = re.sub("\s+", " ", val.strip())
+		if self.__returnType == "":
+			self.__returnType = None
+
+	### Method
 	def addArgument(self, type, name=None, defaultValue=None):
 		if (name == None):
 			name = "arg"
-		self._arguments.append(Variable(type, name, value=defaultValue))
+		self.__arguments.append(Variable(type, name, value=defaultValue))
 
 
-	### Method
 	def show(self, space=""):
 		super(Method, self).show(space)
 		arg = ""
-		for tmp in self._arguments:
-			if (self._arguments.index(tmp) == 0):
+		for tmp in self.__arguments:
+			if (self.__arguments.index(tmp) == 0):
 				arg += tmp.getType()
 			else:
 				arg += ", "+tmp.getType()
 			if tmp.getValue():
 				arg += "(%s)" % tmp.getValue()
 		tmp = ""
-		if (self._virtual):
+		if (self.__virtual):
 			tmp += "virtual "
-		if self._returnType:
-			tmp += self._returnType+" "
-		tmp += self._name
+		if self.__returnType:
+			tmp += self.__returnType+" "
+		tmp += self.__name
 		print("%s(%s)" % (tmp, arg))
 		
 		

@@ -4,9 +4,9 @@
 # Project : unknown
 # Contact : info@devolive.be
 # Created by olive007 at 30/10/2015 10:02:11
-# Last update by olive007 at 04/11/2015 16:39:41
+# Last update by olive007 at 06/11/2015 17:51:01
 
-from enum import Enum
+from parsing.enum34.enum import Enum
 
 SOURCE_FOLDER = "src"
 INCLUDE_FOLDER = "include"

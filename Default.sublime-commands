@@ -5,27 +5,10 @@
     },
     {
         "caption": "Colive: Generate Getter",
-        "command": "colive_generate_method",
-        "args": { "type": "Getter" }
+        "command": "colive_generate_getter"
     },
     {
         "caption": "Colive: Generate Setter",
-        "command": "colive_generate_method",
-        "args": { "type": "Setter" }
-    },
-    {
-        "caption": "Colive: Generate Operator=",
-        "command": "colive_generate_method",
-        "args": { "type": "Operator=" }
-    },
-    {
-        "caption": "Colive: Generate Operator<<",
-        "command": "colive_generate_method",
-        "args": { "type": "Operator<<" }
-    },
-    {
-        "caption": "Colive: Generate Operator>>",
-        "command": "colive_generate_method",
-        "args": { "type": "Operator>>" }
+        "command": "colive_generate_setter"
     }
 ]

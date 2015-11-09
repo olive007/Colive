@@ -4,7 +4,7 @@
 # Project : unknown
 # Contact : info@devolive.be
 # Created by olive007 at 02/11/2015 15:28:44
-# Last update by olive007 at 04/11/2015 20:00:30
+# Last update by olive007 at 08/11/2015 17:16:58
 
 class Instruction(object):
 	"""
@@ -12,23 +12,24 @@ class Instruction(object):
 	"""
 	def __init__(self, static):
 		super(Instruction, self).__init__()
-		self._static = static
+		self.static = static
 
 	### Getter
-	def getStatic(self):
-		return self._static
-
+	@property
+	def static(self):
+		return self.__static
 
 	### Setter
-	def setStatic(self, arg):
-		if not (isinstance(arg, bool)):
-			raise ParserException("Wrong argument")
-		self._static = arg
+	@static.setter
+	def static(self, val):
+		if not (isinstance(val, bool)):
+			self.__static = False
+		self.__static = val
 
 
 	### Method
 	def show(self, space=""):
-		res = ""
-		if (self._static):
-			res += "static "
-		print("%s%s" % (space, res), end="")
+		if (self.__static):
+			print("%sstatic " % space, end="")
+		else:
+			print(space, end="")

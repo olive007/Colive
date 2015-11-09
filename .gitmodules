@@ -1,3 +1,9 @@
 [submodule "jinja2"]
 	path = jinja2
 	url = git://github.com/mitsuhiko/jinja2.git
+[submodule "parsing/enum34"]
+	path = parsing/enum34
+	url = git@github.com:certik/enum34.git
+[submodule "markupsafe"]
+	path = markupsafe
+	url = git@github.com:mitsuhiko/markupsafe.git

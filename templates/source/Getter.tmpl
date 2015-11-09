@@ -1,3 +1,4 @@
-{{type}}	get{{name}}() {
-	return {{name}}
+{{ classData.getAttribute(arg).type }}	{{ classData.name }}::get{{ arg|removeUnderscore }}() const {
+	return {{ arg }}
 }
+

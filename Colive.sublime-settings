@@ -3,20 +3,25 @@
 		Enable or disabled the plugin.
 	*/
 	"activated": true,
+	/*
+		Enable or disabled the plugin.
+	*/
+	"saveBeforeGenerate": true,
 
 	/*
 		order of class
 		that indicate how the file will be generated
 	*/
 	"orderOfClass": [
-		"Attribute"
-		"Constructor"
-		"Destructor"
-		"Getter"
-		"Setter"
-		"Method"
-		"Friendly Method"
-		"Abstract Method"
+		"Macro",
+		"Attribute",
+		"Constructor",
+		"Destructor",
+		"Getter",
+		"Setter",
+		"Method",
+		"Friendly Method",
+		"Abstract Method",
 		"Operator"
 	]
 }

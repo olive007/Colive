@@ -4,7 +4,7 @@
 # Project : Colive
 # Contact : info@devolive.be
 # Created by olive007 at 29/10/2015 21:00:50
-# Last update by olive007 at 04/11/2015 19:30:02
+# Last update by olive007 at 06/11/2015 18:23:55
 
 """
 	Parsing c++
@@ -23,7 +23,6 @@ __all__ = [
 ]
 
 from parsing.cpp_class import CppClass
-from parsing.method import Method
 from parsing.namespace import Namespace
 from parsing.struct import Struct
 __all__ += [
