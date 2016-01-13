@@ -4,6 +4,8 @@
 	<content><![CDATA[
 class ${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}} {
 
+	// Macro
+
 	// Attribut
 	private:
 		$4
@@ -15,6 +17,18 @@ class ${1:${TM_FILENAME/(.+)\..+|.*/\u$1/}} {
 	// Destructor
 	public:
 		virtual ~${2:${TM_FILENAME/(.+)\..+|.*/\u$1/}}() {};$0
+
+	// Getter
+
+	// Setter
+
+	// Method
+
+	// Friendly Method
+
+	// Abstract Method
+
+	// Operator
 
 };
 ]]></content>
